@@ -57,10 +57,14 @@
     </ApplicationDefinition>
     <Compile Include="Model\TextConverter.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\ObservableObject.cs" />
     <Compile Include="ViewModel\ObservableObjectOld.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\Presenter.cs" />
+    <Compile Include="View\SearchControl.xaml.cs">
+      <DependentUpon>SearchControl.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\ConverterControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,6 +84,10 @@
       <DependentUpon>ConvertWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\SearchControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -103,6 +111,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -110,6 +119,7 @@
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Dialogs\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
