@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              d:DesignHeight="535"
              d:DesignWidth="500"
-             d:DataContext="{d:DesignInstance ViewModel:MainViewModel}">
+             d:DataContext="{d:DesignInstance ViewModel:EntityEnquiryViewModel}">
     
     <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Bisque">
         <Grid DockPanel.Dock="Top" Margin="10" Name="gridDataEntry">

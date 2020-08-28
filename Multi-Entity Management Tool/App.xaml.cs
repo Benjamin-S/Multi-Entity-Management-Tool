@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Multi_Entity_Management_Tool;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -13,6 +14,15 @@ namespace Multi_Entity_Management_Tool
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            base.OnStartup(e);
+
+            ApplicationView app = new ApplicationView();
+            ApplicationViewModel context = new ApplicationViewModel();
+            app.DataContext = context;
+            app.Show();
+        }
     }
 
 

@@ -1,13 +1,21 @@
-﻿using System.Diagnostics;
+﻿using Multi_Entity_Management_Tool.Interfaces;
+using System.Diagnostics;
 using System.Windows.Input;
 
 namespace Multi_Entity_Management_Tool.ViewModel
 {
-    class MainViewModel : ObservableObject
+    public class EntityEnquiryViewModel : ObservableObject, IPageViewModel
     {
         private string _identifier;
         private string _displayName;
 
+        public string Name
+        {
+            get
+            {
+                return "Enquiry";
+            }
+        }
 
         public string Identifier
         {
@@ -35,6 +43,7 @@ namespace Multi_Entity_Management_Tool.ViewModel
             DisplayName = Identifier.ToString();
             Identifier = string.Empty;
         });
+
 
     }
 }
