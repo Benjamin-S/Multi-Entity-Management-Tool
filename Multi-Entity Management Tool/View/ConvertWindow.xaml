@@ -16,7 +16,7 @@
     </Window.DataContext>
 
     <DockPanel>
-        <View:SearchControl/>
+        <View:EntityEnquiryControl/>
     </DockPanel>
     <!--<View:ConverterControl/>-->
 

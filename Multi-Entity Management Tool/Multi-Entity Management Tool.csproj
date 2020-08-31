@@ -35,8 +35,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.6.3\lib\net40\ScintillaNET.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -49,6 +53,7 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -58,8 +63,10 @@
     <Compile Include="ApplicationView.xaml.cs">
       <DependentUpon>ApplicationView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\TextConverter.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="ViewModel\EditorViewModel.cs" />
     <Compile Include="ViewModel\EntityEnquiryViewModel.cs" />
     <Compile Include="Interfaces\IPageViewModel.cs" />
     <Compile Include="ApplicationViewModel.cs" />
@@ -67,8 +74,11 @@
     <Compile Include="ViewModel\ObservableObjectOld.cs" />
     <Compile Include="ViewModel\RelayCommand.cs" />
     <Compile Include="ViewModel\Presenter.cs" />
-    <Compile Include="View\SearchControl.xaml.cs">
-      <DependentUpon>SearchControl.xaml</DependentUpon>
+    <Compile Include="View\EditorControl.xaml.cs">
+      <DependentUpon>EditorControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\EntityEnquiryControl.xaml.cs">
+      <DependentUpon>EntityEnquiryControl.xaml</DependentUpon>
     </Compile>
     <Page Include="ApplicationView.xaml">
       <SubType>Designer</SubType>
@@ -93,7 +103,11 @@
       <DependentUpon>ConvertWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="View\SearchControl.xaml">
+    <Page Include="View\EditorControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\EntityEnquiryControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -116,6 +130,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

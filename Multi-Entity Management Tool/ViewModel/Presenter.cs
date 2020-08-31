@@ -35,7 +35,15 @@ namespace Multi_Entity_Management_Tool.ViewModel
         {
             get
             {
-                return "Test";
+                return "Converter";
+            }
+        }
+
+        public string Tooltip
+        {
+            get
+            {
+                return Name;
             }
         }
 

@@ -23,6 +23,7 @@ namespace Multi_Entity_Management_Tool
             // Add available pages.
             PageViewModels.Add(new EntityEnquiryViewModel());
             PageViewModels.Add(new Presenter());
+            PageViewModels.Add(new EditorViewModel());
 
             // Set starting page.
             CurrentPageViewModel = PageViewModels[0];
