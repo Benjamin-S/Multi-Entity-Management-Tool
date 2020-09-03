@@ -8,8 +8,8 @@
              d:DesignHeight="535"
              d:DesignWidth="500"
              d:DataContext="{d:DesignInstance ViewModel:EntityEnquiryViewModel}">
-    
-    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="Bisque">
+
+    <DockPanel HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid DockPanel.Dock="Top" Margin="10" Name="gridDataEntry">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -25,16 +25,27 @@
             </Grid.ColumnDefinitions>
 
             <Label x:Name="lblEnvironment" Grid.Column="0" Grid.Row="0">Environment</Label>
-            <ComboBox x:Name="cmbbEnvironment" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Stretch" VerticalAlignment="Center" MinWidth="100">
-                <ComboBoxItem>Production</ComboBoxItem>
-                <ComboBoxItem>Test</ComboBoxItem>
-                <ComboBoxItem>Development</ComboBoxItem>
-            </ComboBox>
+            <ComboBox ItemsSource="{Binding Path=EnvironmentEnumWithCaptions}"
+                      DisplayMemberPath="Value" 
+                      SelectedValuePath="Key" 
+                      SelectedValue="{Binding Path=EnvironmentProperty, Mode=TwoWay}" 
+                      x:Name="cmbbEnvironment" 
+                      Grid.Column="1" 
+                      Grid.Row="0" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Center" 
+                      MinWidth="100"/>
             <Label x:Name="lblModule" Grid.Column="0" Grid.Row="1">Module</Label>
-            <ComboBox x:Name="cmbbModule" Grid.Column="1" Grid.Row="1" HorizontalAlignment="Stretch" VerticalAlignment="Center" MinWidth="100">
-                <ComboBoxItem>Sales</ComboBoxItem>
-                <ComboBoxItem>Purchasing</ComboBoxItem>
-            </ComboBox>
+            <ComboBox ItemsSource="{Binding Path=ModuleEnumWithCaptions}"
+                      DisplayMemberPath="Value"
+                      SelectedValuePath="Key"
+                      SelectedValue="{Binding Path=ModuleProperty, Mode=TwoWay}"
+                      x:Name="cmbbModule"
+                      Grid.Column="1" 
+                      Grid.Row="1" 
+                      HorizontalAlignment="Stretch" 
+                      VerticalAlignment="Center" 
+                      MinWidth="100"/>
 
             <Label Grid.Column="3" Grid.Row="1" Content="{Binding DisplayName, UpdateSourceTrigger=PropertyChanged}"></Label>
 
@@ -55,8 +66,27 @@
             <Label x:Name="lblIdentifier" Grid.Column="2" Grid.Row="0">Identifier</Label>
             <TextBox x:Name="txtbxIdentifier" Grid.Column="3" Grid.Row="0" Text="{Binding Identifier, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center"/>
         </Grid>
-        <DataGrid ItemsSource="{Binding Entities}" x:Name="dgEntityList" Margin="10" IsReadOnly="True">
+        <Border BorderBrush="LightPink" BorderThickness="0, 1, 0, 0">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <DataGrid Grid.Column="0" 
+                          ItemsSource="{Binding Entities}" 
+                          x:Name="dgEntityList"
+                          Margin="10" 
+                          IsReadOnly="True"/>
 
-        </DataGrid>
+                <Grid Grid.Column="1" 
+                      Margin="10">
+                    <Border BorderBrush="Black" 
+                            BorderThickness="1"/>
+                </Grid>
+            </Grid>
+        </Border>
     </DockPanel>
 </UserControl>

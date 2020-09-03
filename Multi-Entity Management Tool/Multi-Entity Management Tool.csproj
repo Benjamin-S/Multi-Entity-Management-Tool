@@ -63,16 +63,17 @@
     <Compile Include="ApplicationView.xaml.cs">
       <DependentUpon>ApplicationView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Helper\RelayCommandAsync.cs" />
     <Compile Include="Model\Entity.cs" />
     <Compile Include="Model\TextConverter.cs" />
-    <Compile Include="ViewModel\DelegateCommand.cs" />
+    <Compile Include="Helper\DelegateCommand.cs" />
     <Compile Include="ViewModel\EditorViewModel.cs" />
     <Compile Include="ViewModel\EntityEnquiryViewModel.cs" />
     <Compile Include="Interfaces\IPageViewModel.cs" />
     <Compile Include="ApplicationViewModel.cs" />
     <Compile Include="ViewModel\ObservableObject.cs" />
     <Compile Include="ViewModel\ObservableObjectOld.cs" />
-    <Compile Include="ViewModel\RelayCommand.cs" />
+    <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="ViewModel\Presenter.cs" />
     <Compile Include="View\EditorControl.xaml.cs">
       <DependentUpon>EditorControl.xaml</DependentUpon>
